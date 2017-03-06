@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="br.edu.iff.pooa20162.testeveiculo.ListaPropriActivity"
+    tools:context="br.edu.iff.pooa20162.testeveiculo.activity.ListaPropriActivity"
     tools:showIn="@layout/activity_lista_propri">
 
     <TextView
