@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
     }
 
     public void chamaTelaCadastros(View v){
+
         Toast.makeText(this,"",Toast.LENGTH_SHORT);
     }
 }
