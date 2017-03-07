@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/buttonVei"
-        android:onClick="chamaTelaEventos"
+        android:onClick="chamaTelaCadastrosP"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="69dp" />
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:id="@+id/buttonPropri"
-        android:onClick="chamaTelaEventos"
+        android:onClick="chamaTelaCadastrosV"
         android:layout_below="@+id/buttonVei"
         android:layout_centerHorizontal="true" />
 

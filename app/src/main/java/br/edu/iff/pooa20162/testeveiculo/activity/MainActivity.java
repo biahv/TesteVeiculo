@@ -1,9 +1,11 @@
 package br.edu.iff.pooa20162.testeveiculo.activity;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
+
 
 
 import br.edu.iff.pooa20162.testeveiculo.R;
@@ -16,8 +18,19 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
-    public void chamaTelaCadastros(View v){
+    public void chamaTelaCadastrosP(View v){
 
-        Toast.makeText(this,"",Toast.LENGTH_SHORT);
+        Intent intentp = new Intent(MainActivity.this, ListaPropriActivity.class);
+        startActivity(intentp);
+    }
+
+    public void chamaTelaCadastrosV(View v){
+        Intent intentv = new Intent(MainActivity.this, ListaVeiActivity.class);
+        startActivity(intentv);
+    }
+
+    private Context getContext(){
+        return this;
+
     }
 }
