@@ -48,4 +48,4 @@ public class ProprietarioAdapter extends ArrayAdapter<Proprietarios>  {
 
 
 }
-}
+

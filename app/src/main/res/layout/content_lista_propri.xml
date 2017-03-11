@@ -13,8 +13,5 @@
     tools:context="br.edu.iff.pooa20162.testeveiculo.activity.ListaPropriActivity"
     tools:showIn="@layout/activity_lista_propri">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Proprietário!" />
+
 </RelativeLayout>

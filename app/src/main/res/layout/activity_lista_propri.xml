@@ -31,4 +31,12 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email"/>
 
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lvProprietarios"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" /> />
+
+
 </android.support.design.widget.CoordinatorLayout>
