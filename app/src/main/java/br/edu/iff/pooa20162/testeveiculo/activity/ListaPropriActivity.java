@@ -20,6 +20,11 @@ import br.edu.iff.pooa20162.testeveiculo.model.Proprietarios;
 
 public class ListaPropriActivity extends AppCompatActivity {
 
+    public void chamaCadastradosP(View v){
+        Intent intentP1 = new Intent(ListaPropriActivity.this, CadastroActivity.class);
+        startActivity(intentP1);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
