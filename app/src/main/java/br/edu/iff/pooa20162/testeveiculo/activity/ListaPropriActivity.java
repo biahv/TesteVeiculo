@@ -1,8 +1,8 @@
 package br.edu.iff.pooa20162.testeveiculo.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -24,8 +24,14 @@ public class ListaPropriActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(ListaPropriActivity.this,CadastroActivity.class);
+                intent.putExtra("id",0);
+                intent.putExtra("nome","");
+                intent.putExtra("endereco","");
+                intent.putExtra("telefone","");
+                intent.putExtra("dataNasc","");
+                
+                startActivity(intent);
             }
         });
     }
@@ -51,4 +57,6 @@ public class ListaPropriActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
