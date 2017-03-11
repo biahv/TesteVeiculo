@@ -30,7 +30,7 @@ public class ListaPropriActivity extends AppCompatActivity {
                 intent.putExtra("endereco","");
                 intent.putExtra("telefone","");
                 intent.putExtra("dataNasc","");
-                
+
                 startActivity(intent);
             }
         });
