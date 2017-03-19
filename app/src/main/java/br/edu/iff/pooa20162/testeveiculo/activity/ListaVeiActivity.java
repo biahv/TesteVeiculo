@@ -47,7 +47,7 @@ public class ListaVeiActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_lista_propri, menu);
+        getMenuInflater().inflate(R.menu.menu_lista_vei, menu);
         return true;
     }
 
