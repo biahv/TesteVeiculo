@@ -20,10 +20,6 @@ import br.edu.iff.pooa20162.testeveiculo.model.Proprietarios;
 
 public class ListaPropriActivity extends AppCompatActivity {
 
-    public void chamaCadastradosP(View v){
-        Intent intentP1 = new Intent(ListaPropriActivity.this, CadastroActivity.class);
-        startActivity(intentP1);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +33,7 @@ public class ListaPropriActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ListaPropriActivity.this,CadastroActivity.class);
-                intent.putExtra("id",0);
+                intent.putExtra("id",Long.valueOf(0));
                 intent.putExtra("nome","");
                 intent.putExtra("endereco","");
                 intent.putExtra("telefone","");
@@ -83,7 +79,7 @@ public class ListaPropriActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(ListaPropriActivity.this,CadastroActivity.class);
 
-                intent.putExtra("id",proprietarios.get(i).getId().intValue());
+                intent.putExtra("id",proprietarios.get(i).getId());
                 intent.putExtra("nome",proprietarios.get(i).getNome());
                 intent.putExtra("endereco",proprietarios.get(i).getEndereco());
                 intent.putExtra("telefone",proprietarios.get(i).getTelefone());

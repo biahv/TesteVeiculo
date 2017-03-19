@@ -13,4 +13,11 @@
     tools:context="br.edu.iff.pooa20162.testeveiculo.activity.ListaVeiActivity"
     tools:showIn="@layout/activity_lista_vei">
 
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lvVeiculos"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

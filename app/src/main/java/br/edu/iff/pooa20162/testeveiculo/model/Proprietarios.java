@@ -40,16 +40,16 @@ public class Proprietarios extends SugarRecord {
         this.endereco = endereco;
     }
 
-    public String getDataNasc() {
-        return dataNasc;
+    public String getTelefone() {
+        return telefone;
     }
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getDataNasc() {
+        return dataNasc;
     }
 
     public void setDataNasc(String dataNasc) {

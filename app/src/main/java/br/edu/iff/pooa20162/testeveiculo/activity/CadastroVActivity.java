@@ -1,9 +1,10 @@
 package br.edu.iff.pooa20162.testeveiculo.activity;
 
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,11 +16,11 @@ import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 import br.edu.iff.pooa20162.testeveiculo.R;
-import br.edu.iff.pooa20162.testeveiculo.model.Proprietarios;
+import br.edu.iff.pooa20162.testeveiculo.model.Veiculos;
 
-public class CadastroActivity extends Activity {
+public class CadastroVActivity extends Activity {
 
-    EditText nome, endereco, telefone, dataNasc;
+    EditText placa, modelo, ano;
     Button btsalvar, btalterar;
     Long id;
     /**
@@ -31,30 +32,26 @@ public class CadastroActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro);
+        setContentView(R.layout.activity_cadastro_v);
         Intent intent = getIntent();
         id = (Long) intent.getSerializableExtra("id");
 
-        String nomep = (String) intent.getSerializableExtra("nome");
-        String enderecop = (String) intent.getSerializableExtra("endereco");
-        String telefonep = (String) intent.getSerializableExtra("telefone");
-        String dataNascp = (String) intent.getSerializableExtra("dataNasc");
+        String placav = (String) intent.getSerializableExtra("placa");
+        String modelov = (String) intent.getSerializableExtra("modelo");
+        String anov = (String) intent.getSerializableExtra("ano");
 
-        EditText nome = (EditText) findViewById(R.id.etNomeP);
-        nome.setText(nomep);
+        EditText placa = (EditText) findViewById(R.id.etPlacaV);
+        placa.setText(placav);
 
-        EditText endereco = (EditText) findViewById(R.id.etEnderecoP);
-        endereco.setText(enderecop);
+        EditText modelo = (EditText) findViewById(R.id.etModeloV);
+        modelo.setText(modelov);
 
-        EditText telefone = (EditText) findViewById(R.id.etTelefoneP);
-        telefone.setText(telefonep);
-
-        EditText dataNasc = (EditText) findViewById(R.id.etDataNascP);
-        dataNasc.setText(dataNascp);
+        EditText ano = (EditText) findViewById(R.id.etAnoV);
+        ano.setText(anov);
 
 
-        btsalvar = (Button) findViewById(R.id.btSalvarP);
-        btalterar = (Button) findViewById(R.id.btAlterarP);
+        btsalvar = (Button) findViewById(R.id.btSalvarV);
+        btalterar = (Button) findViewById(R.id.btAlterarV);
 
 
         btsalvar.setOnClickListener(new View.OnClickListener() {
@@ -91,38 +88,36 @@ public class CadastroActivity extends Activity {
 
     public void salvar() {
 
-        nome = (EditText) findViewById(R.id.etNomeP);
-        endereco = (EditText) findViewById(R.id.etEnderecoP);
-        telefone = (EditText) findViewById(R.id.etTelefoneP);
-        dataNasc = (EditText) findViewById(R.id.etDataNascP);
+        placa = (EditText) findViewById(R.id.etPlacaV);
+        modelo = (EditText) findViewById(R.id.etModeloV);
+        ano = (EditText) findViewById(R.id.etAnoV);
 
-        Proprietarios proprietarios = new Proprietarios(nome.getText().toString(), endereco.getText().toString(),
-                telefone.getText().toString(), dataNasc.getText().toString());
 
-        proprietarios.save();
+        Veiculos veiculos = new Veiculos(placa.getText().toString(), modelo.getText().toString(),
+                ano.getText().toString());
 
-        Toast.makeText(this, "Proprietário Cadastrado", Toast.LENGTH_LONG).show();
+        veiculos.save();
+
+        Toast.makeText(this, "Veículo Cadastrado", Toast.LENGTH_LONG).show();
         //this.finish();
 
     }
 
     public void alterar() {
 
-        nome = (EditText) findViewById(R.id.etNomeP);
-        endereco = (EditText) findViewById(R.id.etEnderecoP);
-        telefone = (EditText) findViewById(R.id.etTelefoneP);
-        dataNasc = (EditText) findViewById(R.id.etDataNascP);
+        placa = (EditText) findViewById(R.id.etPlacaV);
+        modelo = (EditText) findViewById(R.id.etModeloV);
+        ano = (EditText) findViewById(R.id.etAnoV);
 
-        Proprietarios proprietarios = Proprietarios.findById(Proprietarios.class, id);
+        Veiculos veiculos = Veiculos.findById(Veiculos.class, id);
 
-        proprietarios.setNome(nome.getText().toString());
-        proprietarios.setEndereco(endereco.getText().toString());
-        proprietarios.setTelefone(telefone.getText().toString());
-        proprietarios.setDataNasc(dataNasc.getText().toString());
+        veiculos.setPlaca(placa.getText().toString());
+        veiculos.setModelo(modelo.getText().toString());
+        veiculos.setAno(ano.getText().toString());
 
-        proprietarios.save();
+        veiculos.save();
 
-        Toast.makeText(this, "Proprietário Alterado", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Veículo Alterado", Toast.LENGTH_LONG).show();
         this.finish();
     }
 
