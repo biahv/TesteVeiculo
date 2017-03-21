@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.Spinner;
+import android.widget.ArrayAdapter;
+import java.util.ArrayList;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -17,10 +20,13 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 import br.edu.iff.pooa20162.testeveiculo.R;
 import br.edu.iff.pooa20162.testeveiculo.model.Veiculos;
+import br.edu.iff.pooa20162.testeveiculo.model.Proprietarios;
+import br.edu.iff.pooa20162.testeveiculo.adapter.ProprietarioAdapter;
 
 public class CadastroVActivity extends Activity {
 
     EditText placa, modelo, ano;
+    Spinner spProprietario;
     Button btsalvar, btalterar;
     Long id;
     /**
@@ -40,6 +46,7 @@ public class CadastroVActivity extends Activity {
         String modelov = (String) intent.getSerializableExtra("modelo");
         String anov = (String) intent.getSerializableExtra("ano");
 
+
         EditText placa = (EditText) findViewById(R.id.etPlacaV);
         placa.setText(placav);
 
@@ -48,6 +55,17 @@ public class CadastroVActivity extends Activity {
 
         EditText ano = (EditText) findViewById(R.id.etAnoV);
         ano.setText(anov);
+
+        final ArrayList<Proprietarios> proprietario  = (ArrayList) Proprietarios.listAll(Proprietarios.class);
+
+        ArrayAdapter<Proprietarios> adapter = new ArrayAdapter<Proprietarios>(this, android.R.layout.simple_spinner_item, proprietario);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
+        spProprietario = (Spinner) findViewById(R.id.spProprietarioinVeiculo);
+        spProprietario.setAdapter(adapter);
+
+
 
 
         btsalvar = (Button) findViewById(R.id.btSalvarV);
@@ -91,10 +109,11 @@ public class CadastroVActivity extends Activity {
         placa = (EditText) findViewById(R.id.etPlacaV);
         modelo = (EditText) findViewById(R.id.etModeloV);
         ano = (EditText) findViewById(R.id.etAnoV);
+        Proprietarios proprietario  = ((Proprietarios) spProprietario.getSelectedItem());
 
 
         Veiculos veiculos = new Veiculos(placa.getText().toString(), modelo.getText().toString(),
-                ano.getText().toString());
+                ano.getText().toString(), proprietario);
 
         veiculos.save();
 
@@ -108,12 +127,14 @@ public class CadastroVActivity extends Activity {
         placa = (EditText) findViewById(R.id.etPlacaV);
         modelo = (EditText) findViewById(R.id.etModeloV);
         ano = (EditText) findViewById(R.id.etAnoV);
+        Proprietarios proprietarios  = ((Proprietarios) spProprietario.getSelectedItem());
 
         Veiculos veiculos = Veiculos.findById(Veiculos.class, id);
 
         veiculos.setPlaca(placa.getText().toString());
         veiculos.setModelo(modelo.getText().toString());
         veiculos.setAno(ano.getText().toString());
+        veiculos.setProprietario(proprietarios);
 
         veiculos.save();
 

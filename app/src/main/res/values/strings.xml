@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TesteVeiculo</string>
+    <string name="app_name">Proprietários</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_lista_vei">ListaVeiActivity</string>
+    <string name="title_activity_lista_vei">Veículos</string>
 </resources>

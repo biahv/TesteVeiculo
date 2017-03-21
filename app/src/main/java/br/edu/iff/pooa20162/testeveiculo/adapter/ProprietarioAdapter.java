@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import java.util.ArrayList;
 
@@ -33,6 +35,7 @@ public class ProprietarioAdapter extends ArrayAdapter<Proprietarios>  {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View rowView = inflater.inflate(R.layout.linhaproprietario, parent, false);
+        final Proprietarios item = getItem(position);
 
         TextView nome = (TextView) rowView.findViewById(R.id.tvllvNome);
         TextView endereco = (TextView) rowView.findViewById(R.id.tvllvEndereco);
@@ -44,6 +47,11 @@ public class ProprietarioAdapter extends ArrayAdapter<Proprietarios>  {
         telefone.setText(proprietarios.get(position).getTelefone());
         dataNasc.setText(proprietarios.get(position).getDataNasc());
         return rowView;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return super.getItemId(position);
     }
 
 

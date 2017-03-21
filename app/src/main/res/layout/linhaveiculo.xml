@@ -23,13 +23,12 @@
         android:id="@+id/tvllvAno"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"/>/>
 
-
-    <Spinner
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvllvProprietario" /><![CDATA[
+        android:text="New Text"
+        android:id="@+id/tvllvProprietario"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.SearchResult.Title"/>/>
 
-    />
 
-]]>
 </LinearLayout>

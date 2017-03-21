@@ -37,6 +37,7 @@ public class ListaVeiActivity extends AppCompatActivity {
                 intent.putExtra("placa", "");
                 intent.putExtra("modelo", "");
                 intent.putExtra("ano", "");
+                intent.putExtra("proprietario","");
 
                 startActivity(intent);
             }
@@ -83,6 +84,7 @@ public class ListaVeiActivity extends AppCompatActivity {
                 intent.putExtra("placa",veiculos.get(i).getPlaca());
                 intent.putExtra("modelo",veiculos.get(i).getModelo());
                 intent.putExtra("ano",veiculos.get(i).getAno());
+
 
                 startActivity(intent);
 

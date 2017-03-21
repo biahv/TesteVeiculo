@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -69,6 +70,7 @@ public class ListaPropriActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         final ArrayList<Proprietarios> proprietarios  = (ArrayList) Proprietarios.listAll(Proprietarios.class);
+
 
         ListView lista = (ListView) findViewById(R.id.lvProprietarios);
         ArrayAdapter adapter = new ProprietarioAdapter(this,proprietarios);
